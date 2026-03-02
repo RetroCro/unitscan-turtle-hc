@@ -3,6 +3,6 @@
 ## Title: unitscan|cff00ff98Turtle-HC
 ## Version: 1.0.5
 ## Notes: Unit scanner with flashy alert
-## SavedVariables: unitscan_targets
+## SavedVariables: unitscan_targets, unitscan_sound
 unitscan.lua
 zonetargets.lua

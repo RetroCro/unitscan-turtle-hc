@@ -46,12 +46,13 @@ local YELLOW = {1, 1, .15}
 local CHECK_INTERVAL = 1
 
 unitscan_targets = {}
+unitscan_sound = true
 
 do
 	local last_played
 	
 	function unitscan.play_sound()
-		if not last_played or GetTime() - last_played > 10 then
+		if unitscan_sound and (not last_played or GetTime() - last_played > 10) then
 			SetCVar('MasterSoundEffects', 0)
 			SetCVar('MasterSoundEffects', 1)
 			-- PlaySoundFile[[Interface\AddOns\unitscan-turtle-hc\Event_wardrum_ogre.ogg]]
@@ -458,4 +459,10 @@ function SlashCmdList.UNITSCANTARGET()
 	if unitscan.foundTarget then
 		TargetByName(unitscan.foundTarget, true)
 	end
+end
+
+SLASH_UNITSCANSOUND1 = '/unitscansound'
+function SlashCmdList.UNITSCANSOUND()
+	unitscan_sound = not unitscan_sound
+	unitscan.print('Sound ' .. (unitscan_sound and 'enabled' or 'disabled'))
 end

@@ -67,6 +67,7 @@ The list of units can be found in [zone targets.lua](https://raw.githubuserconte
 **/unitscan** *lists the active scan targets*    
 **/unitscan name** *adds/removes **name** to/from the active scan targets*    
 **/unitscantarget** *targets the most recently found target*    
+**/unitscansound** *toggles sound*    
 
 You can add custom targets to find players or targets not included in the zone targets list by using the command /unitscan *name*. 
 
